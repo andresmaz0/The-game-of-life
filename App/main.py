@@ -5,14 +5,19 @@ import sys # It's usefull to control part of opertaive system
 # starting pygame
 pygame.init()
 
-# Estas variables definirán el tamaño de la pantalla
+# Defining the screen size
 height = 700
 width = 700
 
+num_cells_x = 100
+num_cells_y = 100
+
 # Creating my screen
-screen = pygame.display.set_mode((height,width))
+screen = pygame.display.set_mode((width,height))
 
 running = True
+
+screen_color = (69, 77, 89)
 
 while running:
     
@@ -21,8 +26,8 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    num_cells_x = 100
-    num_cells_y = 100
+    screen.fill(screen_color)
+
     # Drawing the board.
     for y in range(0, num_cells_y):
         for x in range(0, num_cells_x):
